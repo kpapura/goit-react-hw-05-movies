@@ -15,7 +15,7 @@ export const Button = styled.button`
   }
 `;
 export const StyledBtn = styled(Button)`
-width: 100px;
+width: 110px;
   height: 35px;
 display: flex;
   flex-direction: row;
@@ -73,7 +73,8 @@ export const Item = styled.li`
   }
   & > h3 {
     width: 400px;
-    height: 30px;
+    height: 40px;
+    text-align:center;
     border: 1px solid black;
     padding: 5px;
     display: flex;

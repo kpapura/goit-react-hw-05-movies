@@ -30,7 +30,7 @@ export const MoviesInfoList = ({
       <List>
         <Item key={id}>
           <h3>
-            {title} ({release_date})
+            {title} ({release_date.slice(0,4)})
           </h3>
           <img
             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
@@ -38,7 +38,7 @@ export const MoviesInfoList = ({
             width={250}
           />
           
-          <p>User score: {vote_average}</p>
+          <p>User score: {vote_average.toFixed(1)}</p>
           <h4>Overview:</h4>
           <p>{overview}</p>
           <h4>Genres:</h4>
