@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.7775fca1.js",
+    "static/js/983.3167493d.chunk.js": "/goit-react-hw-05-movies/static/js/983.3167493d.chunk.js",
+    "static/js/216.57e39f18.chunk.js": "/goit-react-hw-05-movies/static/js/216.57e39f18.chunk.js",
+    "static/js/667.2affdf2a.chunk.js": "/goit-react-hw-05-movies/static/js/667.2affdf2a.chunk.js",
+    "static/js/383.909a6c70.chunk.js": "/goit-react-hw-05-movies/static/js/383.909a6c70.chunk.js",
+    "static/js/779.44614b0c.chunk.js": "/goit-react-hw-05-movies/static/js/779.44614b0c.chunk.js",
+    "static/js/294.97fe12dd.chunk.js": "/goit-react-hw-05-movies/static/js/294.97fe12dd.chunk.js",
+    "static/media/film.png": "/goit-react-hw-05-movies/static/media/film.3722941b910c2f78efc0.png",
+    "static/media/free-icon-search-bar-8053592.png": "/goit-react-hw-05-movies/static/media/free-icon-search-bar-8053592.328c1781dd4f280993f4.png",
+    "index.html": "/goit-react-hw-05-movies/index.html",
+    "static/media/no-image.svg": "/goit-react-hw-05-movies/static/media/no-image.f8f15b260eef328312d393c6e3c5fc5c.svg",
+    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
+    "main.7775fca1.js.map": "/goit-react-hw-05-movies/static/js/main.7775fca1.js.map",
+    "983.3167493d.chunk.js.map": "/goit-react-hw-05-movies/static/js/983.3167493d.chunk.js.map",
+    "216.57e39f18.chunk.js.map": "/goit-react-hw-05-movies/static/js/216.57e39f18.chunk.js.map",
+    "667.2affdf2a.chunk.js.map": "/goit-react-hw-05-movies/static/js/667.2affdf2a.chunk.js.map",
+    "383.909a6c70.chunk.js.map": "/goit-react-hw-05-movies/static/js/383.909a6c70.chunk.js.map",
+    "779.44614b0c.chunk.js.map": "/goit-react-hw-05-movies/static/js/779.44614b0c.chunk.js.map",
+    "294.97fe12dd.chunk.js.map": "/goit-react-hw-05-movies/static/js/294.97fe12dd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.7775fca1.js"
+  ]
+}
