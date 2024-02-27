@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom'
    return (
        <>
        <Header />
-       <Suspense>
+       <Suspense fallback={<h1>Loading...</h1>}>
          <Outlet/>
        </Suspense>
        

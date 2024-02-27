@@ -1,52 +1,43 @@
-import { MoviesList } from 'components/MoviesList/MoviesList';
-import { SearchForm } from 'components/SearchForm/SearchForm';
 import React, { useEffect, useState } from 'react';
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
+import { MoviesList } from 'components/MoviesList/MoviesList';
+import { SearchForm } from 'components/SearchForm/SearchForm';
+
 import { getMoviesBySearch } from 'services/moviesAPI';
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState('');
   const [movies, setMovies] = useState(null);
   const [error, setError] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
 
-    const searchQuery = useMemo(() =>
-    searchParams.get('search') ?? '',
+  const searchQuery = useMemo(
+    () => searchParams.get('query') || '',
     [searchParams]
   );
 
-    const getResultsBySearch = async() => {
-        setQuery(searchQuery);
-        
-  };
   useEffect(() => {
-    query && getFetchBySearch(query);
-  }, [query]);
+    searchQuery && getFetchBySearch(searchQuery);
+  }, [searchQuery]);
 
-    const getFetchBySearch = async query => {
+  const getFetchBySearch = async param => {
+    setError('');
     try {
-      const { results, total_results } = await getMoviesBySearch(query);
+      const { results, total_results } = await getMoviesBySearch(param);
       total_results
-        ? setMovies(prevMovies =>
-            prevMovies ? [...results] : results
-          )
-          : setError('There are not matched movies');
+        ? setMovies(prevMovies => (prevMovies ? [...results] : results))
+        : setError('There are not matched movies');
     } catch (error) {
       setError(error.message);
     }
   };
   return (
     <>
+      <SearchForm setSearchParams={setSearchParams} />
       {error && <h1>{error}</h1>}
-      <SearchForm
-        getResultsBySearch={getResultsBySearch}
-        setSearchParams={setSearchParams}
-        searchQuery={searchQuery}
-              
-      />
-      {movies && <MoviesList movies={movies} noHeading/>}
+      {movies && <MoviesList movies={movies} noHeading />}
     </>
   );
 };
-export default MoviesPage
+export default MoviesPage;

@@ -1,27 +1,26 @@
-//import { MovieItem } from 'components/MovieItem/MovieItem';
-import { MoviesInfoList } from 'components/MoviesInfoList/MoviesInfoList';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { MoviesInfoList } from 'components/MoviesInfoList/MoviesInfoList';
+
 import { getMoviesInfo } from 'services/moviesAPI';
 
 const MoviesInfoPage = () => {
   const [movieInfo, setMovieInfo] = useState(null);
-    const { movieId } = useParams();
+  const { movieId } = useParams();
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchMovieInfo = async () => {
       try {
-          const movieInfo = await getMoviesInfo(movieId);
+        const movieInfo = await getMoviesInfo(movieId);
         setMovieInfo(movieInfo.data);
       } catch (error) {
         console.log(error.message);
       }
     };
-        fetchMovieInfo();
-       
-
+    fetchMovieInfo();
   }, [movieId]);
-    return movieInfo && <MoviesInfoList {...movieInfo}  />;
+  return movieInfo && <MoviesInfoList {...movieInfo} />;
 };
 
-export default MoviesInfoPage
+export default MoviesInfoPage;

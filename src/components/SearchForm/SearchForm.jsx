@@ -1,29 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
 import { Button, Input, SearchFormTag } from './SearchForm.styled';
-import img from "../../images/free-icon-search-bar-8053592.png"
-export const SearchForm = ({getResultsBySearch, setSearchParams,searchQuery}) => {
-    
-    const handleChange = ({ target: { value } }) => {
-        const nextParams = value !== "" ? { search: value } : {};
-        setSearchParams(nextParams)
-    }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        getResultsBySearch()
-    }
+
+import img from '../../images/free-icon-search-bar-8053592.png';
+
+export const SearchForm = ({ setSearchParams }) => {
+  const { register, handleSubmit, reset } = useForm();
+
+  const submit = data => {
+    setSearchParams(data.param ? { query: data.param } : {});
+    reset();
+  };
   return (
-      <SearchFormTag onSubmit={handleSubmit}>
-          <label >
-              Search Movie
-          <Input type="text"
-              name='search'
-              value={searchQuery}
-              onChange={handleChange} />    
-          </label>
-          <Button>
-              <img src={img} alt="Search" width={20}/>
-              <p>Search</p>
-          </Button>
-      </SearchFormTag>
-  )
-}
+    <SearchFormTag onSubmit={handleSubmit(submit)}>
+      <Input {...register('param')} type="text" />
+      <Button>
+        <img src={img} alt="Search" width={20} />
+        <p>Search</p>
+      </Button>
+    </SearchFormTag>
+  );
+};

@@ -1,5 +1,7 @@
-import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useEffect, useState } from 'react';
+
+import { MoviesList } from 'components/MoviesList/MoviesList';
+
 import { getFavMovies } from 'services/moviesAPI';
 
 const HomePage = () => {
@@ -12,9 +14,7 @@ const HomePage = () => {
   const getFetchFavMovies = async () => {
     try {
       const { results } = await getFavMovies();
-      setMovies(prevMovies =>
-        prevMovies ? [ ...results] : results
-      );
+      setMovies(prevMovies => (prevMovies ? [...results] : results));
     } catch (error) {
       console.log(error.message);
     }
@@ -22,12 +22,12 @@ const HomePage = () => {
   return (
     <>
       {movies && (
-      <>
-        <MoviesList movies={movies}/>
-      </>
+        <>
+          <MoviesList movies={movies} />
+        </>
       )}
     </>
   );
 };
 
-export default HomePage
+export default HomePage;
